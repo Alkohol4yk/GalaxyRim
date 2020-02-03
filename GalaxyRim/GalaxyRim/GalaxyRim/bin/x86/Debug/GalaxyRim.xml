@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>GalaxyRim</name>
+    </assembly>
+    <members>
+        <member name="T:GalaxyRim.Models.IGameObject">
+            <summary>
+            Це інтерфейс основного о'бєкту в грі.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.IGameObject.LoadContent(GalaxyRim.Controllers.Container)">
+            <summary>
+                Метод підгрузки ресурсів об'єкту.
+            </summary>
+            <param name="container">Об'єкт, що займається загрузкою ресурсів.</param>
+        </member>
+        <member name="M:GalaxyRim.Models.IGameObject.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                Метод обробки логіки об'єкту.
+            </summary>
+            <param name="gameTime">Час моменту гри на момент виконання методу.</param>і
+        </member>
+        <member name="T:GalaxyRim.Models.IPhysicalObject">
+            <summary>
+            Інтерфейс об'єктів, що можуть динамічно змінювати свої положення/розміри/швидкість...
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IPhysicalObject.Position">
+            <summary>
+                Позиція об'єкту в просторі.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IPhysicalObject.Angle">
+            <summary>
+                Кут повороту об'єкту відносно додатнього напрямку осі X.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IPhysicalObject.AngularVelocity">
+            <summary>
+                Швидкість обертання об'єкту.
+                Додатні значення - за годинниковою стрілкою.
+                Від'ємні значення - проти годинникової стрілки.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IPhysicalObject.Velocity">
+            <summary>
+            Вектор швидкості та напрямку об'єкта.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.IPhysicalObject.UpdatePhysic(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                Метод обробки фізики об'єкту.
+            </summary>
+            <param name="gameTime">Час моменту гри на момент виконання методу.</param>і
+        </member>
+        <member name="T:GalaxyRim.Models.IDrawableObject">
+            <summary>
+            Інтерфейс об'єктів що мають змогу відображатися на екрані гри
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.SourceRectangle">
+            <summary>
+                Видимий кусок текстури.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.Origin">
+            <summary>
+                Центр об'єкту.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.Scale">
+            <summary>
+                Множник розміру об'єкту.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.ScaleVelocity">
+            <summary>
+                Швидкість зміни розміру об'єкту.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.Color">
+            <summary>
+                Колір текстури.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.IDrawableObject.Texture">
+            <summary>
+                Головна текстура об'єкту.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.IDrawableObject.Draw(Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                Метод, що викликається коли об'єкт повинен себе намалювати
+            </summary>
+            <param name="spriteBatch">Дозволяє малювати групу спрайтів, використовуючи ті самі налаштування.</param>
+            <param name="gameTime">Час моменту гри на момент виконання методу.</param>
+        </member>
+        <member name="T:GalaxyRim.Models.IColidebleObject">
+            <summary>
+            Інтерфейс об'єктів що можуть перетинатися між собою
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.IColidebleObject.IsColided(GalaxyRim.Models.IColidebleObject)">
+            <summary>
+            Метод провірки перетину цього проекту з іншим.
+            </summary>
+            <param name="other">Інший об'єкт з яким порівнюється даний.</param>
+            <returns> Повертає результат </returns>
+        </member>
+        <member name="T:GalaxyRim.Models.Particles.IParticle">
+            <summary>
+            Інтерфейс об'єкту частинки.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.Particles.IParticle.AlphaVel">
+            <summary>
+            Швидкість зміни прозорості частинки.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.Particles.IParticle.TTL">
+            <summary>
+            Час життя частинки (в тіках гри).
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.IParticle.ResetState">
+            <summary>
+            Функція скидання частинки / повернення до ParticlePool.
+            </summary>
+        </member>
+        <member name="T:GalaxyRim.Models.Particles.Particle">
+            <summary>
+            Основний та загальний клас частинки в грі
+            </summary>
+        </member>
+        <member name="E:GalaxyRim.Models.Particles.Particle.EnabledChanged">
+            <summary>
+            Івент  наявності змін об'єкту.
+            </summary>
+        </member>
+        <member name="E:GalaxyRim.Models.Particles.Particle.UpdateOrderChanged">
+            <summary>
+            Івент оновлення порядку черги об'єкта при виклиці Update.
+            </summary>
+        </member>
+        <member name="E:GalaxyRim.Models.Particles.Particle.VisibleChanged">
+            <summary>
+            Івент зміни видимості об'єкту.
+            </summary>
+        </member>
+        <member name="E:GalaxyRim.Models.Particles.Particle.DrawOrderChanged">
+            <summary>
+            Івент зміни порядку в черзі на відображення об'єкту.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.Particles.Particle.SourceRectangle">
+            <summary>
+                Видимий кусок текстури.
+            </summary>
+        </member>
+        <member name="P:GalaxyRim.Models.Particles.Particle.Texture">
+            <summary>
+                Головна текстура об'єкту.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.Particle.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Vector4,System.Single,System.UInt32,System.Single,System.Single,System.Nullable{Microsoft.Xna.Framework.Rectangle})">
+            <summary>
+                Конструктор. Створює об'єкт Частинки
+            </summary>
+            <param name="texture">Текстура конкретної частинки.</param>
+            <param name="position">Позиція в просторі конкретної частинки.</param>
+            <param name="velocity">Текстура конкретної частинки.</param>
+            <param name="angle">Кут повороту частинки.</param>
+            <param name="angularVelocity">Швидкість обертання частинки.</param>
+            <param name="color">Колір забарвлення текстури (Білий цілковито стає цим кольором).</param>
+            <param name="size">Розмір. В скільки разів буде змінений розмір частинки.</param>
+            <param name="ttl">Таймер життя частинки (в тіках гри)</param>
+            <param name="sizeVel">Швидкість зміни розміру частинки</param>
+            <param name="alphaVel">Швидкість зміни прозорості частинки</param>
+            <param name="sourceRectangle">(Опціонально) Частина текстурки, що відображатиметься</param>
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.Particle.#ctor(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,Microsoft.Xna.Framework.Vector4,Microsoft.Xna.Framework.Vector2,System.UInt32,Microsoft.Xna.Framework.Vector2,System.Single,System.Nullable{Microsoft.Xna.Framework.Rectangle})">
+            <summary>
+                Конструктор. Створює об'єкт Частинки
+            </summary>
+            <param name="texture">Текстура конкретної частинки.</param>
+            <param name="position">Позиція в просторі конкретної частинки.</param>
+            <param name="velocity">Текстура конкретної частинки.</param>
+            <param name="angle">Кут повороту частинки.</param>
+            <param name="angularVelocity">Швидкість обертання частинки.</param>
+            <param name="color">Колір забарвлення текстури (Білий цілковито стає цим кольором).</param>
+            <param name="size">Розмір. В скільки разів буде змінений розмір частинки.</param>
+            <param name="ttl">Таймер життя частинки (в тіках гри)</param>
+            <param name="sizeVel">Швидкість зміни розміру частинки</param>
+            <param name="alphaVel">Швидкість зміни прозорості частинки</param>
+            <param name="sourceRectangle">(Опціонально) Частина текстурки, що відображатиметься</param>
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.Particle.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+                Метод обробки фізики частинки
+            </summary>
+            <param name="gameTime">Час моменту гри на момент виконання методу.</param>
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.Particle.UpdatePhysic(Microsoft.Xna.Framework.GameTime)">
+            <seealso cref="M:GalaxyRim.Models.IPhysicalObject.UpdatePhysic(Microsoft.Xna.Framework.GameTime)" />
+        </member>
+        <member name="M:GalaxyRim.Models.Particles.Particle.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>Draws the IDrawable. Reference page contains links to related conceptual articles.</summary><param name="gameTime">Snapshot of the game's timing state.</param>
+        </member>
+        <member name="T:GalaxyRim.GalaxyRim">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.GalaxyRim.Initialize">
+            <summary>
+            Allows the game to perform any initialization it needs to before starting to run.
+            This is where it can query for any required services and load any non-graphic
+            related content.  Calling base.Initialize will enumerate through any components
+            and initialize them as well.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.GalaxyRim.LoadContent">
+            <summary>
+            LoadContent will be called once per game and is the place to load
+            all of your content.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.GalaxyRim.UnloadContent">
+            <summary>
+            UnloadContent will be called once per game and is the place to unload
+            all content.
+            </summary>
+        </member>
+        <member name="M:GalaxyRim.GalaxyRim.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Allows the game to run logic such as updating the world,
+            checking for collisions, gathering input, and playing audio.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:GalaxyRim.GalaxyRim.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This is called when the game should draw itself.
+            </summary>
+            <param name="gameTime">Provides a snapshot of timing values.</param>
+        </member>
+        <member name="M:GalaxyRim.Controllers.DefaultObjectCreator`1.GalaxyRim#Controllers#IPoolObjectCreator{T}#Create">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

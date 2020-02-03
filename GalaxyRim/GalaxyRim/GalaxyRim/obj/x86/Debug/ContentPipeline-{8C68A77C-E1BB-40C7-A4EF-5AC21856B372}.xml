@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{8C68A77C-E1BB-40C7-A4EF-5AC21856B372}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>D:\C#\GalaxyRim\GalaxyRim\GalaxyRimContent\</RootDirectory>
+      <LoggerRootDirectory>D:\C#\GalaxyRim\GalaxyRim\GalaxyRim\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\C#\GalaxyRim\GalaxyRim\GalaxyRim\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\C#\GalaxyRim\GalaxyRim\GalaxyRim\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2020-01-29T14:03:32.7464018+02:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

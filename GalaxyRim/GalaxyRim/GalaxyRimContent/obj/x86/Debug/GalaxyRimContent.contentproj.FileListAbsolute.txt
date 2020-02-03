@@ -1,0 +1,3 @@
+D:\GalaxyRim\GalaxyRim\GalaxyRimContent\obj\x86\Debug\GalaxyRimContent.contentprojAssemblyReference.cache
+D:\GalaxyRim\GalaxyRim\GalaxyRimContent\obj\x86\Debug\GalaxyRimContent.contentproj.CoreCompileInputs.cache
+D:\C#\GalaxyRim\GalaxyRim\GalaxyRimContent\obj\x86\Debug\GalaxyRimContent.contentprojAssemblyReference.cache
